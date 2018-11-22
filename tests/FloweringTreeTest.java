@@ -5,8 +5,16 @@ import org.junit.jupiter.api.Test;
 class FloweringTreeTest {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
+    void testGetName(){
+       
+    }
+	@Test
+    void testGetBlossomState(){
+        
+    }
 
+	@Test
+    void testSetBlossomState(){
+       
+    }
 }
