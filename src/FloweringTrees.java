@@ -7,5 +7,5 @@ public interface FloweringTrees {
 
     public boolean getBlossomState();
 
-    public void setBlossomState(boolean bState);
+    public void setBlossomState(boolean bState, BloomReport report);
 }
