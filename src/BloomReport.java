@@ -54,10 +54,9 @@ public class BloomReport{
     }//isSubscriber
     public boolean inFloweringTreeList(FloweringTree f) {
     	return floweringTreeList.indexOf(f)!=-1;
-    }
-    public ArrayList<Observer> getFlowering() {
-    	return observers;
-    }
+    }//inFloweringTreeList
+    
+  
 
     
 

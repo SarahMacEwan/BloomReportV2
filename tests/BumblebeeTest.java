@@ -25,25 +25,26 @@ public class BumblebeeTest extends TestCase {
     }
 
     @Test
-    public void testUpdates() throws Exception {
-        mireille.updates(treeList);
+    public void testUpdate(){
+        mireille.update(treeList);
         ArrayList<FloweringTrees> bTrees = mireille.getTreesInBloom();
         assertEquals(treeList, bTrees);
-
     }
 
     @Test
-    public void testSubscribe() throws Exception {
-
+    public void testSubscribe(){
+    	mireille.subscribe(report);
+    	assertTrue(report.isSubscriber(mireille));
     }
 
     @Test
-    public void testUnsubscribe() throws Exception {
-
+    public void testUnsubscribe(){
+    	mireille.unsubscribe(report);
+    	assertFalse(report.isSubscriber(mireille));
     }
 
     @Test
-    public void testGetTreesInBloom() throws Exception {
+    public void testGetTreesInBloom(){
 
     }
 
