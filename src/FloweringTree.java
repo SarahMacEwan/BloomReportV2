@@ -19,7 +19,7 @@ public class FloweringTree implements Bloomable{
     @Override
     
     public void addReporter(BloomReport newReporter) {
-    	if(reporters.indexOf(newReporter)!=-1)
+    	if(reporters.indexOf(newReporter)==-1)
     		reporters.add(newReporter);
     }//addReporter
     
@@ -41,10 +41,10 @@ public class FloweringTree implements Bloomable{
 
     @Override
     public void setBloomState(boolean bState){
-        blossoming = bState;
-        if(reporters!=null) {
+    	blossoming = bState;
+        if(reporters.size()!=0 && reporters!=null) {
         	for(BloomReport r:reporters) {
-        		 r.notifySubscribers();
+        		r.notifySubscribers();
         	}
         }  
     }//setBlossomState

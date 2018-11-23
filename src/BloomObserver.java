@@ -12,5 +12,7 @@ public interface BloomObserver {
     public void subscribe(BloomReport report);
 
     public void unsubscribe(BloomReport report);
+    
+    public ArrayList<Bloomable> getTreesInBloom();
 
 }

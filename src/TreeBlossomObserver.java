@@ -8,7 +8,7 @@ public abstract class TreeBlossomObserver implements BloomObserver {
 
 	private ArrayList<Bloomable> treesInBloom;
 	
-	public TreeBlossomObserver(){}
+	public TreeBlossomObserver() {}
 	
 	@Override
     public void update(ArrayList<Bloomable> currentlyInBloom) {

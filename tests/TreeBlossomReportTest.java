@@ -6,26 +6,29 @@
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 class TreeBlossomReportTest {
 
 	   public static TreeBlossomReport report;
-	   public static FloweringTree  frank;
-	   public static FloweringTree  bms;
-	   public static FloweringTree crab;
-	   public static BloomObserver observer1, observer2;
+	   public static FloweringTree  frank, blueMist,crab,cherry;
+	   public static BloomObserver observer1, observer2,observer3;
 	  
 	   @BeforeAll
 	   public static void setUp() {
 		  frank = new FloweringTree("Franklin");
-		  bms = new FloweringTree("BlueMist");
-		  crab = new FloweringTree("Crabapple");		
+		  blueMist = new FloweringTree("BlueMist");
+		  crab = new FloweringTree("Crabapple");
+		  cherry = new FloweringTree("Cherry");
 		  report = new TreeBlossomReport();	
-		  report.addReportItems(frank, bms);
+		  report.addReportItems(frank, blueMist);
 		  observer1=new Bumblebee();
 		  observer2=new Dragonfly();
+		  observer3=new Bumblebee();
 	   }
 	   
 	   @Test
@@ -68,7 +71,15 @@ class TreeBlossomReportTest {
 	    }
 		
 		@Test
-		void notifySubscribers(){
-		  
-		 }
+		void testNotifySubscribers(){
+			report.addReportItems(cherry);
+			report.addSubscriber(observer3);
+			cherry.setBloomState(true);
+			frank.setBloomState(true);
+			ArrayList<Bloomable> treesInBloom=new ArrayList<>();
+			treesInBloom.add(cherry);
+			treesInBloom.add(frank);
+			report.notifySubscribers();
+			assertTrue(treesInBloom.containsAll(observer3.getTreesInBloom()));
+		}
 }//BloomReportTest

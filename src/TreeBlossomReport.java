@@ -18,6 +18,7 @@ public class TreeBlossomReport implements BloomReport{
     
     public void addReportItems(Bloomable ... trees){
         for(Bloomable tree: trees){
+        	
             floweringTreeList.add(tree);
             tree.addReporter(this);
         }
@@ -29,12 +30,11 @@ public class TreeBlossomReport implements BloomReport{
     }//removeFloweringTrees
 
     public void addSubscriber(BloomObserver newSubscriber){
-        if(observers.indexOf(newSubscriber)!=-1)
+    	if(observers.indexOf(newSubscriber)==-1) 
         	observers.add(newSubscriber);
     }//addSubscriber
 
     public void removeSubscriber(BloomObserver unsub){
-    	if(observers.indexOf(unsub)!=-1)
     		observers.remove(unsub);
     }//removeSubscriber
 
