@@ -15,17 +15,17 @@ public class FloweringTree implements FloweringTrees{
     @Override
     public String getName(){
         return name;
-    }
+    }//getName
 
     @Override
     public boolean getBlossomState(){
         return blossoming;
-    }
+    }//getBlossomState
 
     @Override
     public void setBlossomState(boolean bState, BloomReport report){
         blossoming = bState;
         report.notifySubscribers();
-    }
+    }//setBlossomState
 
 }

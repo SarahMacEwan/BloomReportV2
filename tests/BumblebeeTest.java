@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * COMP 3721
  * LW A1
  */
-public class BumblebeeTest extends TestCase {
+public class BumblebeeTest extends TestCase{
 
     public Bumblebee mireille = new Bumblebee();
     public BloomReport report = new BloomReport();
@@ -45,7 +45,7 @@ public class BumblebeeTest extends TestCase {
 
     @Test
     public void testGetTreesInBloom(){
-
+    	
     }
 
 }
