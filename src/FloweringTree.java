@@ -15,17 +15,17 @@ public class FloweringTree implements Bloomable{
         blossoming=false;
         reports=new ArrayList<>();
     }//FloweringTree
+   
     @Override
-    
     public void addReport(BloomReport newReport) {
     	if(reports.indexOf(newReport)==-1&& newReport!=null)
     		reports.add(newReport);
-    }//addReporter
+    }//addReport
     
     @Override
     public void removeReport(BloomReport toRemove) {
     	reports.remove(toRemove);
-    }//addReporter
+    }//removeReport
     
     @Override
     public String getName(){
@@ -33,10 +33,9 @@ public class FloweringTree implements Bloomable{
     }//getName
 
     @Override
-    
     public boolean getBloomState(){
         return blossoming;
-    }//getBlossomState
+    }//getBloomState
 
     @Override
     public void setBloomState(boolean bState){
@@ -46,7 +45,7 @@ public class FloweringTree implements Bloomable{
         		r.notifySubscribers();
         	}
         }  
-    }//setBlossomState
+    }//setBloomState
     
     //Additional Methods for Testing
     public boolean hasRefToReport(BloomReport report) {

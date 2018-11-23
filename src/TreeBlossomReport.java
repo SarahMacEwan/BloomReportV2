@@ -22,12 +22,12 @@ public class TreeBlossomReport implements BloomReport{
             floweringTreeList.add(tree);
             tree.addReport(this);
         }
-    }//addFloweringTrees
+    }//addReportItems
     
     public void removeReportItem(Bloomable toRemove){
         floweringTreeList.remove(toRemove);
         toRemove.removeReport(this);
-    }//removeFloweringTrees
+    }//removeReportItem
 
     public void addSubscriber(BloomObserver newSubscriber){
     	if(!isSubscriber(newSubscriber))

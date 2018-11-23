@@ -2,7 +2,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
+/**
+ * Created by Sarah and Sienna
+ * COMP 3721
+ * LW A1
+ */
 class FloweringTreeTest {
 	
 	public static BloomReport report1, report2;

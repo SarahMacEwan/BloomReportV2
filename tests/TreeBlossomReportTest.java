@@ -47,13 +47,13 @@ class TreeBlossomReportTest {
 	   }
 	   
 		@Test
-	   void addFloweringTrees(){
+	   void addReportItems(){
 			report.addReportItems(crab);
 			assertTrue(report.inFloweringTreeList(crab));
 	   }
 		
 		@Test
-	    void testRemoveFloweringTrees(){
+	    void testRemoveReportItem(){
 			report.removeReportItem(crab);
 			assertFalse(report.inFloweringTreeList(crab));
 	    }

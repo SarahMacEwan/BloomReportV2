@@ -23,7 +23,7 @@ public abstract class TreeBlossomObserver implements BloomObserver {
     @Override
     public void unsubscribe(BloomReport report) {
         report.removeSubscriber(this);
-    }//removeSubscriber
+    }//unsubscribe
 
     //Additional Method for Testing
     public ArrayList<Bloomable> getTreesInBloom(){
