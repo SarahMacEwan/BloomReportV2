@@ -22,25 +22,32 @@ class FloweringTreeTest {
     }
 	
 	@Test
-    void testGetBlossomState0(){
-       assertEquals(false, ft.getBlossomState());
+    void testGetBloomState0(){
+       assertEquals(false, ft.getBloomState());
     }
 	
 	@Test
-    void testGetBlossomState1(){
-       assertTrue(false==ft.getBlossomState());
+    void testGetBloomState1(){
+       assertTrue(false==ft.getBloomState());
     }
 	
 	@Test
-    void testGetBlossomState2(){
-       assertFalse(true==ft.getBlossomState());
+    void testGetBloomState2(){
+       assertFalse(true==ft.getBloomState());
     }
 
 	@Test
-    void testSetBlossomState(){
+    void testSetBloomState0(){
 		boolean state=true;
-		ft.setBlossomState(state, new BloomReport());
-		assertEquals(state, ft.getBlossomState());
+		ft.setBloomState(state);
+		assertEquals(state, ft.getBloomState());
+    }
+	
+	@Test
+    void testSetBloomState1(){
+		boolean state=false;
+		ft.setBloomState(state);
+		assertFalse(true==ft.getBloomState());
     }
 	
 }//FloweringTreeTest

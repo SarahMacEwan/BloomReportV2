@@ -9,21 +9,21 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-class BloomReportTest {
+class TreeBlossomReportTest {
 
-	   public static BloomReport report;
+	   public static TreeBlossomReport report;
 	   public static FloweringTree  frank;
 	   public static FloweringTree  bms;
 	   public static FloweringTree crab;
-	   public static Observer observer1, observer2;
+	   public static BloomObserver observer1, observer2;
 	  
 	   @BeforeAll
 	   public static void setUp() {
 		  frank = new FloweringTree("Franklin");
 		  bms = new FloweringTree("BlueMist");
 		  crab = new FloweringTree("Crabapple");		
-		  report = new BloomReport();	
-		  report.addFloweringTrees(frank, bms);
+		  report = new TreeBlossomReport();	
+		  report.addReportItems(frank, bms);
 		  observer1=new Bumblebee();
 		  observer2=new Dragonfly();
 	   }
@@ -45,13 +45,13 @@ class BloomReportTest {
 	   
 		@Test
 	   void addFloweringTrees(){
-			report.addFloweringTrees(crab);
+			report.addReportItems(crab);
 			assertTrue(report.inFloweringTreeList(crab));
 	   }
 		
 		@Test
 	    void testRemoveFloweringTrees(){
-			report.removeFloweringTrees(crab);
+			report.removeReportItem(crab);
 			assertFalse(report.inFloweringTreeList(crab));
 	    }
 	
