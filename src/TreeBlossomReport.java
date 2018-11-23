@@ -30,7 +30,7 @@ public class TreeBlossomReport implements BloomReport{
     }//removeFloweringTrees
 
     public void addSubscriber(BloomObserver newSubscriber){
-    	if(observers.indexOf(newSubscriber)==-1) 
+    	if(!isSubscriber(newSubscriber))
         	observers.add(newSubscriber);
     }//addSubscriber
 
