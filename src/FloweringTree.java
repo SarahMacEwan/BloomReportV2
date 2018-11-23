@@ -25,7 +25,7 @@ public class FloweringTree implements FloweringTrees{
     @Override
     public void setBlossomState(boolean bState, BloomReport report){
         blossoming = bState;
-        report.sendUpdates();
+        report.notifySubscribers();
     }
 
 }

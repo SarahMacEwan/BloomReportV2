@@ -5,44 +5,60 @@ import java.util.ArrayList;
  * COMP 3721
  * LW A1
  */
-public class BloomReport {
+public class BloomReport{
 
-    private ArrayList<Observer> observerList = new ArrayList<>();
+    private ArrayList<Observer> observers;
 
-    private ArrayList<FloweringTrees> floweringTreeList = new ArrayList<>();
+    private ArrayList<FloweringTrees> floweringTreeList;
 
-    public BloomReport(){}
+    public BloomReport(){
+    	observers=new ArrayList<>();
+    	floweringTreeList= new ArrayList<>();
+    }
+    
+    public void addFloweringTrees(FloweringTrees ... trees){
+        for(FloweringTrees tree: trees){
+            floweringTreeList.add(tree);
+        }
+    }//addFloweringTrees
+    
+    public void removeFloweringTrees(FloweringTrees extTree){
+        floweringTreeList.remove(extTree);
+    }//removeFloweringTrees
 
-    public void sendUpdates(){
+    public void addSubscriber(Observer newSubscriber){
+        observers.add(newSubscriber);
+    }//addSubscriber
+
+    public void removeSubscriber(Observer unsub){
+        observers.remove(unsub);
+    }//removeSubscriber
+
+    public void notifySubscribers(){
         ArrayList<FloweringTrees> blooming = new ArrayList<FloweringTrees>();
-        for(Observer sub: observerList){
+        for(Observer sub: observers){
             for(FloweringTrees tree: floweringTreeList){
                 if(tree.getBlossomState()) {
                     blooming.add(tree);
                 }
             }
-            sub.updates(blooming);
+            sub.update(blooming);
         }
-
+    }//notifySubscribers
+    
+    
+    
+    //Additional Methods for Testing
+    public boolean isSubscriber(Observer obs) {
+    		return observers.indexOf(obs)!=-1;
+    }//isSubscriber
+    public boolean inFloweringTreeList(FloweringTree f) {
+    	return floweringTreeList.indexOf(f)!=-1;
+    }
+    public ArrayList<Observer> getFlowering() {
+    	return observers;
     }
 
-    public void addFloweringTrees(FloweringTrees ... trees){
-        for(FloweringTrees tree: trees){
-            floweringTreeList.add(tree);
-        }
-    }
+    
 
-    public void addSubscribers(Observer newSubscriber){
-        observerList.add(newSubscriber);
-    }
-
-    public void unsubscribe(Observer unsub){
-        observerList.remove(unsub);
-    }
-
-    public void extinctPlant(FloweringTrees extTree){
-        floweringTreeList.remove(extTree);
-    }
-
-
-}
+}//BloomReport

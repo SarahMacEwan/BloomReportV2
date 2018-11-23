@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public interface Observer {
 
-    public void updates(ArrayList<FloweringTrees> currentlyInBloom);
+    public void update(ArrayList<FloweringTrees> currentlyInBloom);
 
     public void subscribe(BloomReport report);
 

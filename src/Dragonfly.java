@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -13,18 +12,18 @@ public class Dragonfly implements Observer {
     public Dragonfly(){}
 
     @Override
-    public void updates(ArrayList<FloweringTrees> currentlyInBloom) {
-        treesInBloom = currentlyInBloom;
+    public void update(ArrayList<FloweringTrees> currentlyInBloom) {
+    	treesInBloom = currentlyInBloom;	
     }
 
     @Override
     public void subscribe(BloomReport report) {
-        report.addSubscribers(this);
+        report.addSubscriber(this);
     }
 
     @Override
     public void unsubscribe(BloomReport report) {
-        report.unsubscribe(this);
+        report.removeSubscriber(this);
     }
 
     public ArrayList<FloweringTrees> getTreesInBloom(){

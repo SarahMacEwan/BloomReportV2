@@ -2,13 +2,14 @@ import junit.framework.TestCase;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-
 /**
- * Created by Sarah on 2018-11-22.
+ * Created by Sarah and Sienna
+ * COMP 3721
+ * LW A1
  */
 public class BumblebeeTest extends TestCase {
 
-    public Bumblebee bee = new Bumblebee();
+    public Bumblebee mireille = new Bumblebee();
     public BloomReport report = new BloomReport();
     public FloweringTree frank = new FloweringTree("Franklin");
     public FloweringTree bms = new FloweringTree("BlueMist");
@@ -25,8 +26,8 @@ public class BumblebeeTest extends TestCase {
 
     @Test
     public void testUpdates() throws Exception {
-        bee.updates(treeList);
-        ArrayList<FloweringTrees> bTrees = bee.getTreesInBloom();
+        mireille.updates(treeList);
+        ArrayList<FloweringTrees> bTrees = mireille.getTreesInBloom();
         assertEquals(treeList, bTrees);
 
     }
