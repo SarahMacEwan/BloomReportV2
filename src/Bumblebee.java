@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * Created by Sarah and Sienna
  * COMP 3721
@@ -9,4 +7,4 @@ public class Bumblebee extends TreeBlossomObserver {
 
     public Bumblebee(){}
 
-}
+}//Bumblebee

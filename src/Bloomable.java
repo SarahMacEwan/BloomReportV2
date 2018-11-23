@@ -5,13 +5,14 @@
  */
 public interface Bloomable{
 
-	public void addReporter(BloomReport newReport);
+	public void addReport(BloomReport newReport);
 	
-	public void removeReporter(BloomReport toRemove);
+	public void removeReport(BloomReport toRemove);
 	
     public String getName();
 
     public boolean getBloomState();
     
     public void setBloomState(boolean bState);
-}
+    
+}//Bloomable

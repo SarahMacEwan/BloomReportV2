@@ -20,13 +20,13 @@ public class TreeBlossomReport implements BloomReport{
         for(Bloomable tree: trees){
         	
             floweringTreeList.add(tree);
-            tree.addReporter(this);
+            tree.addReport(this);
         }
     }//addFloweringTrees
     
     public void removeReportItem(Bloomable toRemove){
         floweringTreeList.remove(toRemove);
-        toRemove.removeReporter(this);
+        toRemove.removeReport(this);
     }//removeFloweringTrees
 
     public void addSubscriber(BloomObserver newSubscriber){

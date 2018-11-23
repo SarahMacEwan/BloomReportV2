@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 /**
  * Created by Sarah and Sienna
  * COMP 3721
@@ -15,4 +14,4 @@ public interface BloomObserver {
     
     public ArrayList<Bloomable> getTreesInBloom();
 
-}
+}//BloomObserver

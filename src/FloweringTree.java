@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 /**
  * Created by Sarah and Sienna
  * COMP 3721
@@ -9,23 +8,23 @@ public class FloweringTree implements Bloomable{
 
     private String name;
     private boolean blossoming;
-    private ArrayList<BloomReport> reporters;
+    private ArrayList<BloomReport> reports;
 
     public FloweringTree(String treeName){
         name = treeName;
         blossoming=false;
-        reporters=new ArrayList<>();
+        reports=new ArrayList<>();
     }//FloweringTree
     @Override
     
-    public void addReporter(BloomReport newReporter) {
-    	if(reporters.indexOf(newReporter)==-1)
-    		reporters.add(newReporter);
+    public void addReport(BloomReport newReport) {
+    	if(reports.indexOf(newReport)==-1&& newReport!=null)
+    		reports.add(newReport);
     }//addReporter
     
     @Override
-    public void removeReporter(BloomReport toRemove) {
-    	reporters.remove(toRemove);
+    public void removeReport(BloomReport toRemove) {
+    	reports.remove(toRemove);
     }//addReporter
     
     @Override
@@ -42,11 +41,20 @@ public class FloweringTree implements Bloomable{
     @Override
     public void setBloomState(boolean bState){
     	blossoming = bState;
-        if(reporters.size()!=0 && reporters!=null) {
-        	for(BloomReport r:reporters) {
+        if(reports.size()!=0 && reports!=null) {
+        	for(BloomReport r:reports) {
         		r.notifySubscribers();
         	}
         }  
     }//setBlossomState
+    
+    //Additional Methods for Testing
+    public boolean hasRefToReport(BloomReport report) {
+    	return reports.indexOf(report)!=-1;
+    }
+    
+    public int numReports() {
+    	return reports.size();
+    }
 
-}
+}//FloweringTree
